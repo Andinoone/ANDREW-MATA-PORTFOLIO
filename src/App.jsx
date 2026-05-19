@@ -253,7 +253,6 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const typed = useTypingEffect([
     'Full-Stack Developer',
-    'BSIT Cum Laude Graduate',
     'UI/UX Enthusiast',
     'Arduino Tinkerer',
   ]);
@@ -338,7 +337,7 @@ export default function App() {
               <img src="/abitch.jpg" alt="Andrew Mata" />
             </div>
             <div className="image-badge">
-              <span>🎓</span> Cum Laude
+              <span>🎓</span> 
             </div>
           </div>
         </div>
@@ -437,7 +436,7 @@ export default function App() {
           <ProjectCard
             delay={0}
             title="Online Hotel Booking System"
-            href="https://bookingfront.onrender.com"
+            href="https://hotelbookingfront.onrender.com"
             description="A full-stack hotel booking platform where users can search for hotels, view available rooms, and complete reservations online."
             features="Room booking, Admin dashboard, real-time availability"
             tech={['HTML', 'CSS', 'JavaScript', 'Angular', 'Node.js', 'Express', 'MySQL', 'Tailwind CSS']}
