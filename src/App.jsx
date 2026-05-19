@@ -226,7 +226,7 @@ function ProjectCard({ title, href, description, features, tech, images, delay =
 
 /* ── Marquee ticker ── */
 const TICKER_ITEMS = [
-  '⚛️ React', '▲ Next.js', '🟢 Node.js', '🐈 NestJS', '🔺 Angular', '🗄️ MySQL', '💨 Tailwind CSS',
+  '⚛️ React', '▲ Next.js', '🟢 Node.js', '🐈 NestJS', '🔺 Angular', '🗄️ MySQL', '🐳 Docker', '💨 Tailwind CSS',
   '⚡ JavaScript', '🔌 Arduino', '📡 ESP32', '🌿 Git', '🚂 Express.js',
   '🌐 HTML5', '🎨 CSS3', '🔗 REST APIs', '💻 VS Code',
 ];
@@ -269,8 +269,8 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = ['hero', 'about', 'skills', 'projects', 'contact'];
-  const navLabels = { hero: 'Home', about: 'About', skills: 'Skills', projects: 'Projects', contact: 'Contact' };
+  const navLinks = ['hero', 'about', 'services', 'skills', 'projects', 'contact'];
+  const navLabels = { hero: 'Home', about: 'About', services: 'Services', skills: 'Skills', projects: 'Projects', contact: 'Contact' };
 
   const handleNavClick = useCallback((id) => {
     setMenuOpen(false);
@@ -311,7 +311,7 @@ export default function App() {
         <div className="hero-content">
           <div className="hero-text">
             <div className="hero-badge">
-              <span className="badge-star">★</span> BSIT Cum Laude Graduate
+              <span className="badge-star">✓</span> Available for Commission
             </div>
             <p className="hero-greeting">👋 Hello, I'm</p>
             <h1 className="hero-name">Andrew Mata</h1>
@@ -389,9 +389,50 @@ export default function App() {
         </div>
       </Section>
 
+      {/* ── SERVICES ── */}
+      <Section id="services" className="services">
+        <div className="section-label">02 — Services</div>
+        <h2 className="section-title">What I Can Do For You</h2>
+        <div className="services-grid">
+          <div className="service-card">
+            <div className="service-icon">🌐</div>
+            <h3>Web Development</h3>
+            <p>Full-stack web applications using React, Next.js, Node.js, and modern frameworks. Responsive, fast, and user-friendly.</p>
+            <ul className="service-features">
+              <li>Custom web applications</li>
+              <li>E-commerce platforms</li>
+              <li>Admin dashboards</li>
+              <li>API integration</li>
+            </ul>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>Clean, modern interfaces that prioritize user experience. From wireframes to polished designs.</p>
+            <ul className="service-features">
+              <li>Responsive design</li>
+              <li>Prototyping</li>
+              <li>Design systems</li>
+              <li>User research</li>
+            </ul>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">🔌</div>
+            <h3>IoT Solutions</h3>
+            <p>Hardware projects with Arduino and ESP32. Sensor integration, automation, and real-time monitoring.</p>
+            <ul className="service-features">
+              <li>Sensor systems</li>
+              <li>Home automation</li>
+              <li>Data logging</li>
+              <li>Remote monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
       {/* ── SKILLS ── */}
       <Section id="skills" className="skills">
-        <div className="section-label">02 — Skills</div>
+        <div className="section-label">03 — Skills</div>
         <h2 className="section-title">Tech Stack</h2>
         <div className="skills-groups">
           <div className="skill-group">
@@ -413,6 +454,7 @@ export default function App() {
               <Skill label="Express.js" icon="🚂" />
               <Skill label="NestJS" icon="🐈" />
               <Skill label="MySQL" icon="🗄️" />
+              <Skill label="Docker" icon="🐳" />
               <Skill label="REST APIs" icon="🔗" />
             </div>
           </div>
@@ -430,7 +472,7 @@ export default function App() {
 
       {/* ── PROJECTS ── */}
       <Section id="projects" className="projects">
-        <div className="section-label">03 — Projects</div>
+        <div className="section-label">04 — Projects</div>
         <h2 className="section-title">What I've Built</h2>
         <div className="project-grid">
           <ProjectCard
@@ -461,10 +503,11 @@ export default function App() {
 
       {/* ── CONTACT ── */}
       <Section id="contact" className="contact">
-        <div className="section-label">04 — Contact</div>
-        <h2 className="section-title">Get In Touch</h2>
+        <div className="section-label">05 — Contact</div>
+        <h2 className="section-title">Let's Work Together</h2>
         <p className="contact-sub">
-          Have a project in mind or just want to say hi? My inbox is always open.
+          Ready to bring your project to life? I'm available for freelance work and commissions.
+          Let's discuss how I can help you achieve your goals.
         </p>
         <div className="contact-cards">
           <a href="mailto:mataandrewczar@gmail.com" className="contact-card">
@@ -481,10 +524,20 @@ export default function App() {
               <span className="contact-card-value">github.com/Andinoone</span>
             </div>
           </a>
+          <a href="https://www.linkedin.com/in/andrew-czar-mata-395468407/" target="_blank" rel="noopener noreferrer" className="contact-card">
+            <span className="contact-icon">💼</span>
+            <div>
+              <span className="contact-card-label">LinkedIn</span>
+              <span className="contact-card-value">Connect with me</span>
+            </div>
+          </a>
         </div>
-        <a href="mailto:mataandrewczar@gmail.com" className="btn-primary contact-btn">
-          Say Hello 👋
-        </a>
+        <div className="contact-cta-group">
+          <a href="mailto:mataandrewczar@gmail.com?subject=Project Inquiry" className="btn-primary contact-btn">
+            Start a Project 🚀
+          </a>
+          <p className="response-time">⚡ Typically responds within 24 hours</p>
+        </div>
       </Section>
 
       {/* ── FOOTER ── */}
