@@ -4,7 +4,17 @@ type: docker
 name: default
 
 steps:
-  - name: hello
-    image: alpine
+  - name: deploy
+    image: docker:cli
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
     commands:
-      - echo hello from local drone
+      - docker build -t myapp:latest .
+      - docker rm -f myapp || true
+      - docker run -d --name myapp -p 3001:3000 myapp:latest
+
+volumes:
+  - name: dockersock
+    host:
+      path: /var/run/docker.sock
