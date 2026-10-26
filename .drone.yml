@@ -1,9 +1,10 @@
+
 kind: pipeline
 type: docker
 name: default
-steps:
 
-name: hello
-image: alpine
-commands:
-echo hello from local drone
+steps:
+  - name: hello
+    image: alpine
+    commands:
+      - echo hello from local drone
